@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-success: var(--brand-success);
+  --color-brand-bg: var(--brand-bg);
+}
+
+@layer base {
+  :root {
+    /* Premium Slate/Violet/Emerald Theme */
+    --brand-primary: oklch(0.62 0.23 273.4); /* Modern Violet / Violet-500 */
+    --brand-primary-hover: oklch(0.56 0.24 271.8); /* Violet-600 */
+    --brand-success: oklch(0.72 0.18 149.3); /* Emerald-500 */
+    --brand-bg: oklch(0.12 0.02 254); /* Sleek Deep Slate-950 */
+    
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-slate-900;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-brand-bg text-slate-50 antialiased selection:bg-brand-primary/30;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    user-select: none;
+  }
+}
+
+.glass {
+  @apply bg-slate-950/40 backdrop-blur-md border border-white/5;
+}
+
+.active-tab {
+  @apply border-b-2 border-brand-primary text-brand-primary;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-700;
+}
